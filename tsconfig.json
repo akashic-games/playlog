@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "noLib": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "outDir": "./lib"
+  },
+  "files": [
+    "./node_modules/typescript/lib/lib.es6.d.ts",
+    "./src/Tick.ts",
+    "./src/Event.ts",
+    "./src/StorageData.ts",
+    "./src/index.ts"
+  ]
+}

@@ -25,7 +25,7 @@ export interface Tick extends Array<any> {
 export const enum TickIndex {
 	Frame = 0,
 	Events = 1,
-	StorageData = 2,
+	StorageData = 2
 }
 
 /**

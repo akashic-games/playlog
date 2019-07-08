@@ -12,7 +12,6 @@
     "clean": "rimraf ./lib && rimraf ./test/build",
     "build": "tsc -p ./",
     "test": "cd ./test && tsc -p ./",
-    "test2": "cd ./test && npm run build",
     "lint": "npm run lint:ts && npm run lint:md",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.ts*' 'test/*.ts'",
     "lint:md": "remark ./*.md --frail --no-stdout --quiet --rc-path .remarkrc"

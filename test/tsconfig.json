@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "noLib": true,
+    "lib": ["es5"],
     "noImplicitAny": true,
     "module": "commonjs",
     "declaration": false,
@@ -9,7 +9,6 @@
     "outDir": "./build"
   },
   "files": [
-    "../node_modules/typescript/lib/lib.core.d.ts",
     "./playlog-test.ts"
   ]
 }

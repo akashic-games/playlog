@@ -8,11 +8,14 @@
     "README.md"
   ],
   "scripts": {
-    "prepublish": "gulp clean && npm run build",
-    "build": "gulp compile",
-    "test": "gulp test && npm run lint",
-    "lint": "gulp lint && npm run lint:md",
-    "lint:md": "remark ./*.md --frail --no-stdout --quiet --rc-path ./.remarkrc"
+    "prepublish": "npm run clean && npm run build",
+    "clean": "rimraf ./lib && rimraf ./test/build",
+    "build": "tsc -p ./",
+    "test": "cd ./test && tsc -p ./",
+    "lint": "npm run lint:ts && npm run lint:md && npm run textlint",
+    "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.ts*' 'test/*.ts'",
+    "lint:md": "remark ./*.md --frail --no-stdout --quiet --rc-path .remarkrc",
+    "textlint": "textlint -f pretty-error ./README.md"
   },
   "repository": {
     "type": "git",
@@ -21,18 +24,15 @@
   "author": "DWANGO Co., Ltd.",
   "license": "MIT",
   "devDependencies": {
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-shell": "^0.5.1",
-    "gulp-tslint": "^4.3.1",
-    "remark-cli": "~2.0.0",
-    "remark-lint": "~5.0.1",
-    "textlint": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "textlint": "^11.2.6",
     "textlint-rule-max-ten": "^2.0.1",
-    "textlint-rule-no-mix-dearu-desumasu": "^1.4.0",
-    "textlint-rule-prh": "^2.2.1",
-    "tslint": "^3.2.2",
-    "typescript": "1.7.5"
+    "textlint-rule-no-mix-dearu-desumasu": "^4.0.0",
+    "textlint-rule-prh": "^5.2.1",
+    "remark-cli": "~6.0.1",
+    "remark-lint": "~6.0.5",
+    "tslint": "~5.18.0",
+    "typescript": "~3.5.2"
   },
   "typings": "lib/index.d.ts",
   "publishConfig": {

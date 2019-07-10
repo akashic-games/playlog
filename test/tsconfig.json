@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "ES5",
     "lib": ["es5"],
-    "noImplicitAny": true,
     "module": "commonjs",
     "declaration": false,
     "removeComments": false,
-    "outDir": "./build"
+    "outDir": "./build",
+    "strict": true
   },
   "files": [
     "./playlog-test.ts"

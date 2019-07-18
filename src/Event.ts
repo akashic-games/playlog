@@ -30,7 +30,7 @@ export interface Event extends Array<any> {
 	/**
 	 * @param プレイヤーID
 	 */
-	2: string;
+	2: string | null;
 }
 
 export const enum EventIndex {

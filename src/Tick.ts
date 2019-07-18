@@ -14,7 +14,7 @@ export interface Tick extends Array<any> {
 	/**
 	 * @param イベント
 	 */
-	1?: Event.Event[];
+	1?: Event.Event[] | null;
 
 	/**
 	 * @param ストレージデータ

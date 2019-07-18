@@ -1,7 +1,7 @@
 /**
  * ビルドテスト
  */
-import * as playlog from "../lib"
+import * as playlog from "../lib";
 
 // JoinEvent
 var joinEvent: playlog.JoinEvent = [playlog.EventCode.Join, 3, "100", "tom"];
@@ -38,6 +38,9 @@ var pointMoveEvent: playlog.PointMoveEvent = [playlog.EventCode.PointUp, 1, "100
 
 // OperationEvent
 var operationEvent: playlog.OperationEvent = [playlog.EventCode.Operation, 1, "100", 32, [100, 200, 30, 12, 200, 220, "orange"]];
+
+// Event playerId = null
+var joinEventPlayerIdNull: playlog.Event = [playlog.EventCode.Join, 1, null];
 
 // Tick
 var tick: playlog.Tick = [100];

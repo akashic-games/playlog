@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "ES5",
     "lib": ["es5"],
-    "noImplicitAny": true,
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "strict": true
   },
   "files": [
     "./src/Tick.ts",

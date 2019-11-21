@@ -5,6 +5,7 @@
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
+    "preserveConstEnums": true,
     "outDir": "./lib",
     "strict": true
   },

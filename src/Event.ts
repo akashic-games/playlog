@@ -99,13 +99,18 @@ export interface PlayerInfoEvent extends Event {
 	 * @param プレイヤー名
 	 */
 	3: string;
+	/**
+	 * @param ユーザデータ
+	 */
+	4?: any;
 }
 
 export const enum PlayerInfoEventIndex {
 	Code = 0,
 	Priority = 1,
 	PlayerId = 2,
-	PlayerName = 3
+	PlayerName = 3,
+	UserData = 4
 }
 
 /**

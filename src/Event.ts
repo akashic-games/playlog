@@ -100,7 +100,7 @@ export interface PlayerInfoEvent extends Event {
 	 */
 	3: string;
 	/**
-	 * @param ユーザデータ
+	 * @param ユーザ定義データ
 	 */
 	4?: any;
 }

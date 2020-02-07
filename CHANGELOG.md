@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.0.0
+* PlayerInfoEvent を追加
+
 ## 1.3.3
 * lib/Event.js で実態を定義するように修正
 

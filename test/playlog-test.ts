@@ -27,6 +27,10 @@ var messageEvent: playlog.MessageEvent = [playlog.EventCode.Message, 1, "100", {
 // TimestampEvent
 var timestampEvent: playlog.TimestampEvent = [playlog.EventCode.Timestamp, 1, "100", 2000];
 
+// PlayerInfoEvent
+var playerInfoEvent: playlog.PlayerInfoEvent = [playlog.EventCode.PlayerInfo, 1, "100", "tom", { someAdditionalData: 100 }];
+playerInfoEvent[playlog.PlayerInfoEventIndex.PlayerName] = "joe";
+
 // PointDownEvent
 var pointDownEvent: playlog.PointDownEvent = [playlog.EventCode.PointDown, 1, "100", 1, 100, 200, 500];
 

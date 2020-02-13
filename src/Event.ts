@@ -7,6 +7,7 @@ export const enum EventCode {
 	Join = 0x0,
 	Leave = 0x1,
 	Timestamp = 0x2,
+	PlayerInfo = 0x3,
 	Message= 0x20,
 	PointDown = 0x21,
 	PointMove = 0x22,
@@ -91,6 +92,25 @@ export const enum TimestampEventIndex {
 	Priority = 1,
 	PlayerId = 2,
 	Timestamp = 3
+}
+
+export interface PlayerInfoEvent extends Event {
+	/**
+	 * @param プレイヤー名
+	 */
+	3: string;
+	/**
+	 * @param ユーザ定義データ
+	 */
+	4?: any;
+}
+
+export const enum PlayerInfoEventIndex {
+	Code = 0,
+	Priority = 1,
+	PlayerId = 2,
+	PlayerName = 3,
+	UserData = 4
 }
 
 /**

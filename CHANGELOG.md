@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.0.0
+* Priority の定義を拡張
+
 ## 2.0.0
 * PlayerInfoEvent を追加
 

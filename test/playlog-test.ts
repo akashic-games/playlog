@@ -46,6 +46,11 @@ var operationEvent: playlog.OperationEvent = [playlog.EventCode.Operation, 1, "1
 // Event playerId = null
 var joinEventPlayerIdNull: playlog.Event = [playlog.EventCode.Join, 1, null];
 
+// Transient event (priority=2)
+var transientEvent: playlog.Event = [playlog.EventCode.Message, 2 | 0b100, "100", { transient: true }];
+var priority = 0b0011 & transientEvent[playlog.EventIndex.PriorityFlags];
+var transient = !!(0b1000 & transientEvent[playlog.EventIndex.PriorityFlags]);
+
 // Tick
 var tick: playlog.Tick = [100];
 

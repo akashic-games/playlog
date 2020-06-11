@@ -25,7 +25,7 @@ export interface Event extends Array<any> {
 	 */
 	0: EventCode;
 	/**
-	 * @param プライオリティ
+	 * @param プライオリティフラグ
 	 */
 	1: number;
 	/**
@@ -36,7 +36,7 @@ export interface Event extends Array<any> {
 
 export const enum EventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2
 }
 
@@ -57,7 +57,7 @@ export interface JoinEvent extends Event {
 
 export const enum JoinEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	PlayerName = 3,
 	StorageData = 4
@@ -72,7 +72,7 @@ export interface LeaveEvent extends Event {
 
 export const enum LeaveEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2
 }
 
@@ -89,7 +89,7 @@ export interface TimestampEvent extends Event {
 
 export const enum TimestampEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	Timestamp = 3
 }
@@ -107,7 +107,7 @@ export interface PlayerInfoEvent extends Event {
 
 export const enum PlayerInfoEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	PlayerName = 3,
 	UserData = 4
@@ -126,7 +126,7 @@ export interface MessageEvent extends Event {
 
 export const enum MessageEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	Data = 3
 }
@@ -156,7 +156,7 @@ export interface PointDownEvent extends Event {
 
 export const enum PointDownEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	PointerId = 3,
 	X = 4,
@@ -205,7 +205,7 @@ export interface PointMoveEvent extends Event {
 
 export const enum PointMoveEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	PointerId = 3,
 	X = 4,
@@ -258,7 +258,7 @@ export interface PointUpEvent extends Event {
 
 export const enum PointUpEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	PointerId = 3,
 	X = 4,
@@ -287,7 +287,7 @@ export interface OperationEvent extends Event {
 
 export const enum OperationEventIndex {
 	Code = 0,
-	Priority = 1,
+	PriorityFlags = 1,
 	PlayerId = 2,
 	OperationCode = 3,
 	Data = 4

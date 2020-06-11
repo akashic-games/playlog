@@ -40,6 +40,11 @@ export const enum EventIndex {
 	PlayerId = 2
 }
 
+export const enum PriorityFlagsMask {
+	Priority = 0b0011,
+	Transient = 0b1000
+}
+
 /**
  * JoinEvent (0x0)
  * プレイヤーの参加イベント。

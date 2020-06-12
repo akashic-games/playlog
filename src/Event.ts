@@ -25,7 +25,7 @@ export interface Event extends Array<any> {
 	 */
 	0: EventCode;
 	/**
-	 * @param プライオリティフラグ
+	 * @param イベントフラグ
 	 */
 	1: number;
 	/**

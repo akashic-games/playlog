@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.1.0
+* EventFlags に Ignorable を追加
+
 ## 3.0.0
 * Priority の定義を EventFlags に拡張
 

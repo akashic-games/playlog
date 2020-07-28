@@ -50,6 +50,13 @@ var joinEventPlayerIdNull: playlog.Event = [playlog.EventCode.Join, 1, null];
 var transientEvent: playlog.Event = [playlog.EventCode.Message, 2 | playlog.EventFlagsMask.Transient, "100", { transient: true }];
 var priority = playlog.EventFlagsMask.Priority & transientEvent[playlog.EventIndex.EventFlags];
 var transient = !!(playlog.EventFlagsMask.Transient & transientEvent[playlog.EventIndex.EventFlags]);
+var ignorable = !!(playlog.EventFlagsMask.Ignorable & transientEvent[playlog.EventIndex.EventFlags]);
+
+// Ignorable event (priority=1)
+var skippableEvent: playlog.Event = [playlog.EventCode.Message, 1 | playlog.EventFlagsMask.Ignorable, "100", { ignorable: true }];
+var priority = playlog.EventFlagsMask.Priority & skippableEvent[playlog.EventIndex.EventFlags];
+var transient = !!(playlog.EventFlagsMask.Transient & skippableEvent[playlog.EventIndex.EventFlags]);
+var ignorable = !!(playlog.EventFlagsMask.Ignorable & skippableEvent[playlog.EventIndex.EventFlags]);
 
 // Tick
 var tick: playlog.Tick = [100];

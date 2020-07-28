@@ -41,8 +41,9 @@ export const enum EventIndex {
 }
 
 export const enum EventFlagsMask {
-	Priority = 0b0011,
-	Transient = 0b1000
+	Priority = 0b00011,
+	Transient = 0b01000,
+	Ignorable = 0b10000
 }
 
 /**

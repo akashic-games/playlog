@@ -1,6 +1,8 @@
 /**
  * ビルドテスト
+ * ビルドテストのため変数未使用の lint エラーは無効とする
  */
+/* eslint @typescript-eslint/no-unused-vars: 0 */
 import * as playlog from "../lib";
 
 // JoinEvent

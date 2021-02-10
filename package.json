@@ -13,9 +13,7 @@
     "build": "tsc -p ./",
     "test": "cd ./test && tsc -p ./",
     "lint": "npm run lint:ts && npm run lint:md && npm run textlint",
-    "lint:ts": "npm run lint:src && npm run lint:spec",
-    "lint:src": "eslint -c .eslintrc src/**/*.ts --fix",
-    "lint:spec": "eslint -c ./test/.eslintrc test/*.ts --fix",
+    "lint:ts": "eslint src/**/*.ts test/*.ts --fix",
     "lint:md": "remark ./*.md --frail --no-stdout --quiet --rc-path .remarkrc",
     "textlint": "textlint -f pretty-error ./README.md"
   },

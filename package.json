@@ -8,7 +8,7 @@
     "README.md"
   ],
   "scripts": {
-    "prepublish": "npm run clean && npm run build",
+    "prepare": "npm run clean && npm run build",
     "clean": "rimraf ./lib && rimraf ./test/build",
     "build": "tsc -p ./",
     "test": "cd ./test && tsc -p ./",

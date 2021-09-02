@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["every weekend"],
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "separateMinorPatch": false,
+  "separateMajorMinor": false,
+  "pin": false,
+  "rangeStrategy": "bump",
+  "groupName": "all dependencies",
+  "groupSlug": "all",
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "groupName": "all dependencies",
+      "groupSlug": "all"
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": false
+  }
+}

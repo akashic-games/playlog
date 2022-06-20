@@ -25,8 +25,8 @@
   "license": "MIT",
   "devDependencies": {
     "@akashic/eslint-config": "~1.1.0",
-    "@typescript-eslint/eslint-plugin": "~5.27.0",
-    "eslint": "~8.17.0",
+    "@typescript-eslint/eslint-plugin": "~5.29.0",
+    "eslint": "~8.18.0",
     "eslint-plugin-import": "~2.26.0",
     "eslint-plugin-jest": "~26.5.0",
     "remark-cli": "~10.0.1",

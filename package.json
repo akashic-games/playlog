@@ -24,19 +24,19 @@
   "author": "DWANGO Co., Ltd.",
   "license": "MIT",
   "devDependencies": {
-    "@akashic/eslint-config": "~1.1.0",
-    "@typescript-eslint/eslint-plugin": "~5.41.0",
-    "eslint": "~8.26.0",
-    "eslint-plugin-import": "~2.26.0",
-    "eslint-plugin-jest": "~27.1.0",
-    "remark-cli": "~11.0.0",
-    "remark-lint": "~9.1.1",
+    "@akashic/eslint-config": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.1.5",
+    "remark-cli": "^11.0.0",
+    "remark-lint": "^9.1.1",
     "rimraf": "^3.0.2",
-    "textlint": "^12.1.1",
+    "textlint": "^12.2.3",
     "textlint-rule-max-ten": "^4.0.3",
     "textlint-rule-no-mix-dearu-desumasu": "^5.0.0",
     "textlint-rule-prh": "^5.3.0",
-    "typescript": "~4.8.0"
+    "typescript": "^4.8.4"
   },
   "typings": "lib/index.d.ts",
   "publishConfig": {

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Unreleased changes
+* PointDownEvent, PointMoveEvent, PointUpEvent に「ボタンの種類」を意味するパラメータを追加
+
 ## 3.1.0
 * EventFlags に Ignorable を追加
 

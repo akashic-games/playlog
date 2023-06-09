@@ -212,10 +212,6 @@ export interface PointMoveEvent extends Event {
 	 * @param エンティティID
 	 */
 	10?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	11?: number;
 }
 
 export const enum PointMoveEventIndex {
@@ -229,8 +225,7 @@ export const enum PointMoveEventIndex {
 	StartDeltaY = 7,
 	PrevDeltaX = 8,
 	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11
+	EntityId = 10
 }
 
 /**
@@ -270,10 +265,6 @@ export interface PointUpEvent extends Event {
 	 * @param エンティティID
 	 */
 	10?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	11?: number;
 }
 
 export const enum PointUpEventIndex {
@@ -287,8 +278,7 @@ export const enum PointUpEventIndex {
 	StartDeltaY = 7,
 	PrevDeltaX = 8,
 	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11
+	EntityId = 10
 }
 
 /**

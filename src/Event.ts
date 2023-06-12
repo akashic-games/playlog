@@ -1,4 +1,4 @@
-import * as storage from "./StorageData";
+import type * as storage from "./StorageData";
 
 /**
  * イベントコード

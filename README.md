@@ -115,6 +115,7 @@ numberは数値型、stringは文字列型を表します。
 | 4     | number        | NO           | X座標            |
 | 5     | number        | NO           | Y座標            |
 | 6     | number        | YES          | エンティティID   |
+| 7     | button        | YES          | ボタンの種類     |
 
 #### PointMoveEvent (0x22)
 

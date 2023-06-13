@@ -1,5 +1,5 @@
-import * as Event from "./Event";
-import {StorageData} from "./StorageData";
+import type * as Event from "./Event";
+import type {StorageData} from "./StorageData";
 
 /**
  * Tick

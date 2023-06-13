@@ -1,4 +1,4 @@
-import * as storage from "./StorageData";
+import type * as storage from "./StorageData";
 
 /**
  * イベントコード
@@ -158,6 +158,10 @@ export interface PointDownEvent extends Event {
 	 * @param エンティティID
 	 */
 	6?: number;
+	/**
+	 * @param ボタンの種類
+	 */
+	7?: number;
 }
 
 export const enum PointDownEventIndex {
@@ -167,7 +171,8 @@ export const enum PointDownEventIndex {
 	PointerId = 3,
 	X = 4,
 	Y = 5,
-	EntityId = 6
+	EntityId = 6,
+	Button = 7
 }
 
 /**

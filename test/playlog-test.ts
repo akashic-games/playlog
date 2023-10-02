@@ -34,13 +34,13 @@ const playerInfoEvent: playlog.PlayerInfoEvent = [playlog.EventCode.PlayerInfo, 
 playerInfoEvent[playlog.PlayerInfoEventIndex.PlayerName] = "joe";
 
 // PointDownEvent
-const pointDownEvent: playlog.PointDownEvent = [playlog.EventCode.PointDown, 1, "100", 1, 100, 200, 500, 0];
+const pointDownEvent: playlog.PointDownEvent = [playlog.EventCode.PointDown, 1, "100", 1, 100, 200, 500, 0, 0];
 
 // PointMoveEvent
-const pointMoveEvent: playlog.PointMoveEvent = [playlog.EventCode.PointMove, 1, "100", 1, 100, 200, 10, 12, 20, 22, 500];
+const pointMoveEvent: playlog.PointMoveEvent = [playlog.EventCode.PointMove, 1, "100", 1, 100, 200, 10, 12, 20, 22, 500, 0];
 
 // PointUpEvent
-const pointUpEvent: playlog.PointUpEvent = [playlog.EventCode.PointUp, 1, "100", 1, 100, 200, 30, 12, 200, 220, 500];
+const pointUpEvent: playlog.PointUpEvent = [playlog.EventCode.PointUp, 1, "100", 1, 100, 200, 30, 12, 200, 220, 500, 0];
 
 // OperationEvent
 const operationEvent: playlog.OperationEvent = [playlog.EventCode.Operation, 1, "100", 32, [100, 200, 30, 12, 200, 220, "orange"]];

@@ -28,3 +28,4 @@ lib
 dist
 junitresults.xml
 test/build
+*.tgz

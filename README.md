@@ -131,6 +131,7 @@ numberは数値型、stringは文字列型を表します。
 | 8     | number        | NO           | 直前のポイントムーブイベントからのX座標の差 |
 | 9     | number        | NO           | 直前のポイントムーブイベントからのY座標の差 |
 | 10    | number        | YES          | エンティティID                              |
+| 11    | button        | YES          | ボタンの種類                                |
 
 #### PointUpEvent (0x23)
 
@@ -146,6 +147,7 @@ numberは数値型、stringは文字列型を表します。
 | 8     | number        | NO           | 直前のポイントムーブイベントからのX座標の差 |
 | 9     | number        | NO           | 直前のポイントムーブイベントからのY座標の差 |
 | 10    | number        | YES          | エンティティID                              |
+| 11    | button        | YES          | ボタンの種類                                |
 
 #### OperationEvent (0x40)
 

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.3.0
+* PointMoveEvent, PointUpEvent に button を追加
+
 ## 3.2.0
 * PointDownEvent に「ボタンの種類」を意味するパラメータを追加
 

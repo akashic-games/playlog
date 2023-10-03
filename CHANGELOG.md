@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## unreleased changes
+## 3.3.0
 * PointMoveEvent, PointUpEvent に button を追加
 
 ## 3.2.0

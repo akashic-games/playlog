@@ -1,6 +1,6 @@
 {
   "name": "@akashic/playlog",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "The interface definition of Playlog, the serialization format of Akashic game execution",
   "main": "lib/index.js",
   "files": [

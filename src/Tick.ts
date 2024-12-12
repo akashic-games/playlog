@@ -22,11 +22,12 @@ export interface Tick extends Array<any> {
 	2?: StorageData[];
 }
 
-export const enum TickIndex {
-	Frame = 0,
-	Events = 1,
-	StorageData = 2
-}
+export const TickIndex = {
+	Frame: 0,
+	Events: 1,
+	StorageData: 2
+} as const;
+export type TickIndex = typeof TickIndex[keyof typeof TickIndex];
 
 /**
  * TickList
@@ -49,8 +50,9 @@ export interface TickList extends Array<any> {
 	2?: Tick[];
 }
 
-export const enum TickListIndex {
-	From = 0,
-	To = 1,
-	Ticks = 2
-}
+export const TickListIndex = {
+	From: 0,
+	To: 1,
+	Ticks: 2
+} as const;
+export type TickListIndex = typeof TickListIndex[keyof typeof TickListIndex];

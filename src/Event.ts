@@ -3,17 +3,18 @@ import type * as storage from "./StorageData";
 /**
  * イベントコード
  */
-export const enum EventCode {
-	Join = 0x0,
-	Leave = 0x1,
-	Timestamp = 0x2,
-	PlayerInfo = 0x3,
-	Message= 0x20,
-	PointDown = 0x21,
-	PointMove = 0x22,
-	PointUp = 0x23,
-	Operation = 0x40
-}
+export const EventCode = {
+	Join: 0x0,
+	Leave: 0x1,
+	Timestamp: 0x2,
+	PlayerInfo: 0x3,
+	Message: 0x20,
+	PointDown: 0x21,
+	PointMove: 0x22,
+	PointUp: 0x23,
+	Operation: 0x40
+} as const;
+export type EventCode = typeof EventCode[keyof typeof EventCode];
 
 /**
  * イベント共通のインターフェース。
@@ -34,17 +35,19 @@ export interface Event extends Array<any> {
 	2: string | null;
 }
 
-export const enum EventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2
-}
+export const EventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2
+} as const;
+export type EventIndex = typeof EventIndex[keyof typeof  EventIndex];
 
-export const enum EventFlagsMask {
-	Priority = 0b00011,
-	Transient = 0b01000,
-	Ignorable = 0b10000
-}
+export const EventFlagsMask = {
+	Priority: 0b00011,
+	Transient: 0b01000,
+	Ignorable: 0b10000
+} as const;
+export type EventFlagsMask = typeof EventFlagsMask[keyof typeof EventFlagsMask];
 
 /**
  * JoinEvent (0x0)
@@ -61,13 +64,14 @@ export interface JoinEvent extends Event {
 	4?: storage.StorageData[];
 }
 
-export const enum JoinEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PlayerName = 3,
-	StorageData = 4
-}
+export const JoinEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	PlayerName: 3,
+	StorageData: 4
+} as const;
+export type JoinEventIndex = typeof JoinEventIndex[keyof typeof JoinEventIndex];
 
 /**
  * LeaveEvent (0x1)
@@ -76,11 +80,12 @@ export const enum JoinEventIndex {
 export interface LeaveEvent extends Event {
 }
 
-export const enum LeaveEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2
-}
+export const LeaveEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2
+} as const;
+export type LeaveEventIndex = typeof LeaveEventIndex[keyof typeof LeaveEventIndex];
 
 /**
  * TimestampEvent（0x2）
@@ -93,12 +98,13 @@ export interface TimestampEvent extends Event {
 	3: number;
 }
 
-export const enum TimestampEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	Timestamp = 3
-}
+export const TimestampEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	Timestamp: 3
+} as const;
+export type TimestampEventIndex = typeof TimestampEventIndex[keyof typeof TimestampEventIndex];
 
 export interface PlayerInfoEvent extends Event {
 	/**
@@ -111,13 +117,14 @@ export interface PlayerInfoEvent extends Event {
 	4?: any;
 }
 
-export const enum PlayerInfoEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PlayerName = 3,
-	UserData = 4
-}
+export const PlayerInfoEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	PlayerName: 3,
+	UserData: 4
+} as const;
+export type PlayerInfoEventIndex = typeof PlayerInfoEventIndex[keyof typeof PlayerInfoEventIndex];
 
 /**
  * MessageEvent (0x20)
@@ -130,12 +137,13 @@ export interface MessageEvent extends Event {
 	3: any;
 }
 
-export const enum MessageEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	Data = 3
-}
+export const MessageEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	Data: 3
+} as const;
+export type MessageEventIndex = typeof MessageEventIndex[keyof typeof MessageEventIndex];
 
 /**
  * PointDownEvent (0x21)
@@ -164,16 +172,17 @@ export interface PointDownEvent extends Event {
 	7?: number;
 }
 
-export const enum PointDownEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	EntityId = 6,
-	Button = 7
-}
+export const PointDownEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	PointerId: 3,
+	X: 4,
+	Y: 5,
+	EntityId: 6,
+	Button: 7
+} as const;
+export type PointDownEventIndex = typeof PointDownEventIndex[keyof typeof PointDownEventIndex];
 
 /**
  * PointMoveEvent (0x22)
@@ -218,20 +227,21 @@ export interface PointMoveEvent extends Event {
 	11?: number;
 }
 
-export const enum PointMoveEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	StartDeltaX = 6,
-	StartDeltaY = 7,
-	PrevDeltaX = 8,
-	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11,
-}
+export const PointMoveEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	PointerId: 3,
+	X: 4,
+	Y: 5,
+	StartDeltaX: 6,
+	StartDeltaY: 7,
+	PrevDeltaX: 8,
+	PrevDeltaY: 9,
+	EntityId: 10,
+	Button: 11
+} as const;
+export type PointMoveEventIndex = typeof PointMoveEventIndex[keyof typeof PointMoveEventIndex];
 
 /**
  * PointUpEvent (0x23)
@@ -276,20 +286,21 @@ export interface PointUpEvent extends Event {
 	11?: number;
 }
 
-export const enum PointUpEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	StartDeltaX = 6,
-	StartDeltaY = 7,
-	PrevDeltaX = 8,
-	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11
-}
+export const PointUpEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	PointerId: 3,
+	X: 4,
+	Y: 5,
+	StartDeltaX: 6,
+	StartDeltaY: 7,
+	PrevDeltaX: 8,
+	PrevDeltaY: 9,
+	EntityId: 10,
+	Button: 11
+} as const;
+export type PointUpEventIndex = typeof PointUpEventIndex[keyof typeof PointUpEventIndex];
 
 /**
  * OperationEvent (0x40)
@@ -306,10 +317,11 @@ export interface OperationEvent extends Event {
 	4: (number|string)[];
 }
 
-export const enum OperationEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	OperationCode = 3,
-	Data = 4
-}
+export const OperationEventIndex = {
+	Code: 0,
+	EventFlags: 1,
+	PlayerId: 2,
+	OperationCode: 3,
+	Data: 4
+} as const;
+export type OperationEventIndex = typeof OperationEventIndex[keyof typeof OperationEventIndex];

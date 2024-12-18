@@ -13,6 +13,10 @@
     "./src/Tick.ts",
     "./src/Event.ts",
     "./src/StorageData.ts",
-    "./src/index.ts"
+    "./src/index.ts",
+    "./src/constants/Tick.ts",
+    "./src/constants/Event.ts",
+    "./src/constants/StorageData.ts",
+    "./src/constants/index.ts",
   ]
 }

@@ -1,4 +1,4 @@
-import { EventCodeType } from "./constants";
+import type { EventCodeType } from "./constants";
 import type * as storage from "./StorageData";
 
 /**

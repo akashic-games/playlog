@@ -100,7 +100,7 @@ export type PointDownEventIndexType =
 	typeof PointDownEventIndexButton;
 
 export const PointMoveEventIndexCode = 0;
-export const PointMoveEventIndexEventFlags = 1
+export const PointMoveEventIndexEventFlags = 1;
 export const PointMoveEventIndexPlayerId  = 2;
 export const PointMoveEventIndexPointerId  = 3;
 export const PointMoveEventIndexX = 4;

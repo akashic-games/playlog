@@ -19,7 +19,8 @@ export type EventCodeType =
 	typeof EventCodeMessage |
 	typeof EventCodePointDown |
 	typeof EventCodePointMove |
-	typeof EventCodePointUp;
+	typeof EventCodePointUp |
+	typeof EventCodeOperation;
 
 
 export const EventIndexCode = 0;
@@ -56,7 +57,7 @@ export const TimestampEventIndexTimeStamp = 3;
 export type TimestampEventIndexType =
 	typeof TimestampEventIndexCode |
 	typeof TimestampEventIndexEventFlags |
-	typeof TimestampEventIndexEventFlags |
+	typeof TimestampEventIndexPlayerId |
 	typeof TimestampEventIndexTimeStamp;
 
 export const PlayerInfoEventIndexCode = 0;
@@ -144,8 +145,8 @@ export type PointUpEventIndexType =
 	typeof PointUpEventIndexPointerId |
 	typeof PointUpEventIndexX |
 	typeof PointUpEventIndexY |
-	typeof PointUpEventIndexPrevDeltaX |
-	typeof PointUpEventIndexPrevDeltaY |
+	typeof PointUpEventIndexStartDeltaX |
+	typeof PointUpEventIndexStartDeltaY |
 	typeof PointUpEventIndexPrevDeltaX |
 	typeof PointUpEventIndexPrevDeltaY |
 	typeof PointUpEventIndexEntityId |

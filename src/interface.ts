@@ -20,7 +20,6 @@ export interface Event extends Array<any> {
 	2: string | null;
 }
 
-
 /**
  * JoinEvent (0x0)
  * プレイヤーの参加イベント。
@@ -36,14 +35,12 @@ export interface JoinEvent extends Event {
 	4?: storage.StorageData[];
 }
 
-
 /**
  * LeaveEvent (0x1)
  * プレイヤーの離脱イベント。
  */
 export interface LeaveEvent extends Event {
 }
-
 
 /**
  * TimestampEvent（0x2）
@@ -56,7 +53,6 @@ export interface TimestampEvent extends Event {
 	3: number;
 }
 
-
 export interface PlayerInfoEvent extends Event {
 	/**
 	 * @param プレイヤー名
@@ -68,7 +64,6 @@ export interface PlayerInfoEvent extends Event {
 	4?: any;
 }
 
-
 /**
  * MessageEvent (0x20)
  * 汎用的なデータを表すイベント。
@@ -79,7 +74,6 @@ export interface MessageEvent extends Event {
 	 */
 	3: any;
 }
-
 
 /**
  * PointDownEvent (0x21)
@@ -107,7 +101,6 @@ export interface PointDownEvent extends Event {
 	 */
 	7?: number;
 }
-
 
 /**
  * PointMoveEvent (0x22)
@@ -152,8 +145,6 @@ export interface PointMoveEvent extends Event {
 	11?: number;
 }
 
-
-
 /**
  * PointUpEvent (0x23)
  * ポイントアップイベント。
@@ -197,8 +188,6 @@ export interface PointUpEvent extends Event {
 	11?: number;
 }
 
-
-
 /**
  * OperationEvent (0x40)
  * 操作プラグインイベント。
@@ -213,7 +202,6 @@ export interface OperationEvent extends Event {
 	 */
 	4: (number|string)[];
 }
-
 
 /**
  * Tick
@@ -236,7 +224,6 @@ export interface Tick extends Array<any> {
 	2?: storage.StorageData[];
 }
 
-
 /**
  * TickList
  */
@@ -257,4 +244,3 @@ export interface TickList extends Array<any> {
 	 */
 	2?: Tick[];
 }
-

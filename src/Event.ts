@@ -1,117 +1,113 @@
+import * as event from "./constants/Event";
+
 /**
  * イベントコード
  */
 export const enum EventCode {
-	Join = 0x0,
-	Leave = 0x1,
-	Timestamp = 0x2,
-	PlayerInfo = 0x3,
-	Message= 0x20,
-	PointDown = 0x21,
-	PointMove = 0x22,
-	PointUp = 0x23,
-	Operation = 0x40
+	Join = event.EventCodeJoin,
+	Leave = event.EventCodeLeave,
+	Timestamp = event.EventCodeTimestamp,
+	PlayerInfo = event.EventCodePlayerInfo,
+	Message= event.EventCodeMessage,
+	PointDown = event.EventCodePointDown,
+	PointMove = event.EventCodePointMove,
+	PointUp = event.EventCodePointUp,
+	Operation = event.EventCodeOperation
 }
 
 export const enum EventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2
+	Code = event.EventIndexCode,
+	EventFlags = event.EventIndexEventFlags,
+	PlayerId = event.EventIndexPlayerId
 }
 
 export const enum EventFlagsMask {
-	Priority = 0b00011,
-	Transient = 0b01000,
-	Ignorable = 0b10000
+	Priority = event.EventFlagsMaskPriority,
+	Transient = event.EventFlagsMaskTransient,
+	Ignorable = event.EventFlagsMaskIgnorable
 }
 
 export const enum JoinEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PlayerName = 3,
-	StorageData = 4
+	Code = event.JoinEventIndexCode,
+	EventFlags = event.JoinEventIndexEventFlags,
+	PlayerId = event.JoinEventIndexPlayerId,
+	PlayerName = event.PlayerInfoEventIndexPlayerName,
+	StorageData = event.JoinEventIndexStorageData
 }
 
-
 export const enum LeaveEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2
+	Code = event.LeaveEventIndexCode,
+	EventFlags = event.LeaveEventIndexEventFlags,
+	PlayerId = event.LeaveEventIndexPlayerId
 }
 
 export const enum TimestampEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	Timestamp = 3
+	Code = event.TimestampEventIndexCode,
+	EventFlags = event.TimestampEventIndexEventFlags,
+	PlayerId = event.TimestampEventIndexPlayerId,
+	Timestamp = event.TimestampEventIndexTimeStamp
 }
-
 
 export const enum PlayerInfoEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PlayerName = 3,
-	UserData = 4
+	Code = event.PlayerInfoEventIndexCode,
+	EventFlags = event.PlayerInfoEventIndexEventFlags,
+	PlayerId = event.PlayerInfoEventIndexPlayerId,
+	PlayerName = event.PlayerInfoEventIndexPlayerName,
+	UserData = event.PlayerInfoEventIndexUserData
 }
-
 
 export const enum MessageEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	Data = 3
+	Code = event.MessageEventIndexCode,
+	EventFlags = event.MessageEventIndexEventFlags,
+	PlayerId = event.MessageEventIndexPlayerId,
+	Data = event.MessageEventIndexData
 }
-
 
 export const enum PointDownEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	EntityId = 6,
-	Button = 7
+	Code = event.PointDownEventIndexCode,
+	EventFlags = event.PointDownEventIndexEventFlags,
+	PlayerId = event.PointDownEventIndexPlayerId,
+	PointerId = event.PointDownEventIndexPointerId,
+	X = event.PointDownEventIndexX,
+	Y = event.PointDownEventIndexY,
+	EntityId = event.PointDownEventIndexEntityId,
+	Button = event.PointDownEventIndexButton
 }
 
-
 export const enum PointMoveEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	StartDeltaX = 6,
-	StartDeltaY = 7,
-	PrevDeltaX = 8,
-	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11,
+	Code = event.PointMoveEventIndexCode,
+	EventFlags = event.PointMoveEventIndexEventFlags,
+	PlayerId = event.PointMoveEventIndexPlayerId,
+	PointerId = event.PointMoveEventIndexPointerId,
+	X = event.PointMoveEventIndexX,
+	Y = event.PointMoveEventIndexY,
+	StartDeltaX = event.PointMoveEventIndexStartDeltaX,
+	StartDeltaY = event.PointMoveEventIndexStartDeltaY,
+	PrevDeltaX = event.PointMoveEventIndexPrevDeltaX,
+	PrevDeltaY = event.PointMoveEventIndexPrevDeltaY,
+	EntityId = event.PointMoveEventIndexEntityId,
+	Button = event.PointMoveEventIndexButton,
 }
 
 export const enum PointUpEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	StartDeltaX = 6,
-	StartDeltaY = 7,
-	PrevDeltaX = 8,
-	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11
+	Code = event.PointUpEventIndexCode,
+	EventFlags = event.PointUpEventIndexEventFlags,
+	PlayerId = event.PointUpEventIndexPlayerId,
+	PointerId = event.PointUpEventIndexPointerId,
+	X = event.PointUpEventIndexX,
+	Y = event.PointUpEventIndexY,
+	StartDeltaX = event.PointUpEventIndexStartDeltaX,
+	StartDeltaY = event.PointUpEventIndexStartDeltaY,
+	PrevDeltaX = event.PointUpEventIndexPrevDeltaX,
+	PrevDeltaY = event.PointUpEventIndexPrevDeltaY,
+	EntityId = event.PointUpEventIndexEntityId,
+	Button = event.PointUpEventIndexButton
 }
 
-
 export const enum OperationEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	OperationCode = 3,
-	Data = 4
+	Code = event.OperationEventIndexCode,
+	EventFlags = event.OperationEventIndexEventFlags,
+	PlayerId = event.OperationEventIndexPlayerId,
+	OperationCode = event.OperationEventIndexOperatonCode,
+	Data = event.OperationEventIndexData
 }

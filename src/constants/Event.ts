@@ -1,5 +1,3 @@
-import type * as storage from "./StorageData";
-
 /**
  * イベントコード
  */
@@ -23,24 +21,6 @@ export type EventCodeType =
 	typeof EventCodePointMove |
 	typeof EventCodePointUp;
 
-/**
- * イベント共通のインターフェース。
- */
-export interface Event extends Array<any> {
-	[index: number]: any;
-	/**
-	 * @param EventCode
-	 */
-	0: EventCodeType;
-	/**
-	 * @param イベントフラグ
-	 */
-	1: number;
-	/**
-	 * @param プレイヤーID
-	 */
-	2: string | null;
-}
 
 export const EventIndexCode: 0 = 0;
 export const EventIndexEventFlags: 1 = 1;
@@ -51,21 +31,6 @@ export const EventFlagsMaskPriority: 0b00011 = 0b00011;
 export const EventFlagsMaskTransient: 0b01000 = 0b01000;
 export const EventFlagsMaskIgnorable: 0b10000 = 0b10000;
 export type EventFlagsMaskType = typeof EventFlagsMaskPriority | typeof EventFlagsMaskTransient | typeof EventFlagsMaskIgnorable;
-
-/**
- * JoinEvent (0x0)
- * プレイヤーの参加イベント。
- */
-export interface JoinEvent extends Event {
-	/**
-	 * @param プレイヤー名
-	 */
-	3: string;
-	/*
-	 * @param ストレージデータ
-	 */
-	4?: storage.StorageData[];
-}
 
 export const JoinEventIndexCode: 0 = 0;
 export const JoinEventIndexEventFlags: 1 = 1;
@@ -79,28 +44,10 @@ export type JoinEventIndexType =
 	typeof JoinEventIndexPlayerName |
 	typeof JoinEventIndexStorageData;
 
-/**
- * LeaveEvent (0x1)
- * プレイヤーの離脱イベント。
- */
-export interface LeaveEvent extends Event {
-}
-
 export const LeaveEventIndexCode: 0 = 0;
 export const LeaveEventIndexEventFlags: 1 = 1;
 export const LeaveEventIndexPlayerId: 2 = 2;
 export type LeaveEventIndexType = typeof LeaveEventIndexCode | typeof LeaveEventIndexEventFlags | typeof LeaveEventIndexPlayerId;
-
-/**
- * TimestampEvent（0x2）
- * 時間の記録を表すイベント。
- */
-export interface TimestampEvent extends Event {
-	/**
-	 * @param 時間を表す値
-	 */
-	3: number;
-}
 
 export const TimestampEventIndexCode: 0 = 0;
 export const TimestampEventIndexEventFlags: 1 = 1;
@@ -111,17 +58,6 @@ export type TimestampEventIndexType =
 	typeof TimestampEventIndexEventFlags |
 	typeof TimestampEventIndexEventFlags |
 	typeof TimestampEventIndexTimeStamp;
-
-export interface PlayerInfoEvent extends Event {
-	/**
-	 * @param プレイヤー名
-	 */
-	3: string;
-	/**
-	 * @param ユーザ定義データ
-	 */
-	4?: any;
-}
 
 export const PlayerInfoEventIndexCode: 0 = 0;
 export const PlayerInfoEventIndexEventFlags: 1 = 1;
@@ -135,17 +71,6 @@ export type PlayerInfoEventIndexType =
 	typeof PlayerInfoEventIndexPlayerName |
 	typeof PlayerInfoEventIndexUserData;
 
-/**
- * MessageEvent (0x20)
- * 汎用的なデータを表すイベント。
- */
-export interface MessageEvent extends Event {
-	/**
-	 * @param データ
-	 */
-	3: any;
-}
-
 export const MessageEventIndexCode: 0 = 0;
 export const MessageEventIndexEventFlags: 1 = 1;
 export const MessageEventIndexPlayerId: 2 = 2;
@@ -155,33 +80,6 @@ export type MessageEventIndexType =
 	typeof MessageEventIndexEventFlags |
 	typeof MessageEventIndexPlayerId |
 	typeof MessageEventIndexData;
-
-/**
- * PointDownEvent (0x21)
- * ポイントダウンイベント。
- */
-export interface PointDownEvent extends Event {
-	/**
-	 * @param ポインターID
-	 */
-	3: number;
-	/**
-	 * @param X座標
-	 */
-	4: number;
-	/**
-	 * @param Y座標
-	 */
-	5: number;
-	/**
-	 * @param エンティティID
-	 */
-	6?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	7?: number;
-}
 
 export const PointDownEventIndexCode: 0 = 0;
 export const PointDownEventIndexEventFlags: 1 = 1;
@@ -200,49 +98,6 @@ export type PointDownEventIndexType =
 	typeof PointDownEventIndexY |
 	typeof PointDownEventIndexEntityId |
 	typeof PointDownEventIndexButton;
-
-/**
- * PointMoveEvent (0x22)
- * ポイントムーブイベント。
- */
-export interface PointMoveEvent extends Event {
-	/**
-	 * @param ポインターID
-	 */
-	3: number;
-	/**
-	 * @param X座標
-	 */
-	4: number;
-	/**
-	 * @param Y座標
-	 */
-	5: number;
-	/**
-	 * @param ポイントダウンイベントからのX座標の差
-	 */
-	6: number;
-	/**
-	 * @param ポイントダウンイベントからのY座標の差
-	 */
-	7: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのX座標の差
-	 */
-	8: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのY座標の差
-	 */
-	9: number;
-	/**
-	 * @param エンティティID
-	 */
-	10?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	11?: number;
-}
 
 export const PointMoveEventIndexCode: 0 = 0;
 export const PointMoveEventIndexEventFlags: 1 = 1
@@ -270,49 +125,6 @@ export type PointMoveEventIndexType =
 	typeof PointMoveEventIndexEntityId |
 	typeof PointMoveEventIndexButton;
 
-/**
- * PointUpEvent (0x23)
- * ポイントアップイベント。
- */
-export interface PointUpEvent extends Event {
-	/**
-	 * @param ポインターID
-	 */
-	3: number;
-	/**
-	 * @param X座標
-	 */
-	4: number;
-	/**
-	 * @param Y座標
-	 */
-	5: number;
-	/**
-	 * @param ポイントダウンイベントからのX座標の差
-	 */
-	6: number;
-	/**
-	 * @param ポイントダウンイベントからのY座標の差
-	 */
-	7: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのX座標の差
-	 */
-	8: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのY座標の差
-	 */
-	9: number;
-	/**
-	 * @param エンティティID
-	 */
-	10?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	11?: number;
-}
-
 export const PointUpEventIndexCode: 0 = 0;
 export const PointUpEventIndexEventFlags: 1 = 1;
 export const PointUpEventIndexPlayerId: 2 = 2;
@@ -338,21 +150,6 @@ export type PointUpEventIndexType =
 	typeof PointUpEventIndexPrevDeltaY |
 	typeof PointUpEventIndexEntityId |
 	typeof PointUpEventIndexButton;
-
-/**
- * OperationEvent (0x40)
- * 操作プラグインイベント。
- */
-export interface OperationEvent extends Event {
-	/**
-	 * @param 操作プラグインコード
-	 */
-	3: number;
-	/**
-	 * @param 操作プラグインデータ
-	 */
-	4: (number|string)[];
-}
 
 export const OperationEventIndexCode: 0 = 0;
 export const OperationEventIndexEventFlags: 1 = 1;

@@ -1,4 +1,4 @@
-import type { EventCodeType } from "./constants";
+import type { EventCode } from "./constants";
 import type * as storage from "./StorageData";
 
 /**
@@ -9,7 +9,7 @@ export interface Event extends Array<any> {
 	/**
 	 * @param EventCode
 	 */
-	0: EventCodeType;
+	0: EventCode;
 	/**
 	 * @param イベントフラグ
 	 */

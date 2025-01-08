@@ -1,3 +1,4 @@
+export * from "./EventCommon";
 import * as event from "./constants/Event";
 
 /**

@@ -1,3 +1,5 @@
+export * from "../TickCommon";
+
 export const TickIndexFrame = 0;
 export const TickIndexEvents = 1;
 export const TickIndexStorageData = 2;

@@ -1,3 +1,5 @@
+export * from "../EventCommon";
+
 /**
  * イベントコード
  */
@@ -138,7 +140,7 @@ export const PointDownEventIndexPlayerId = 2;
 export const PointDownEventIndexPointerId = 3;
 export const PointDownEventIndexX = 4;
 export const PointDownEventIndexY = 5;
-export const PointDownEventIndexEntityId =6;
+export const PointDownEventIndexEntityId = 6;
 export const PointDownEventIndexButton = 7;
 
 export type PointDownEventIndexCode = typeof PointDownEventIndexCode;

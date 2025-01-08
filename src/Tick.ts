@@ -1,3 +1,5 @@
+export * from "./TickCommon";
+
 export const enum TickIndex {
 	Frame = 0,
 	Events = 1,

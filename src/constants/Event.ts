@@ -236,11 +236,11 @@ export type PointUpEventIndexType =
 	 PointUpEventIndexX |
 	 PointUpEventIndexY |
 	 PointUpEventIndexStartDeltaX |
-	PointUpEventIndexStartDeltaY |
-	PointUpEventIndexPrevDeltaX |
-	PointUpEventIndexPrevDeltaY |
-	PointUpEventIndexEntityId |
-	PointUpEventIndexButton;
+	 PointUpEventIndexStartDeltaY |
+	 PointUpEventIndexPrevDeltaX |
+	 PointUpEventIndexPrevDeltaY |
+	 PointUpEventIndexEntityId |
+	 PointUpEventIndexButton;
 
 export const OperationEventIndexCode = 0;
 export const OperationEventIndexEventFlags = 1;

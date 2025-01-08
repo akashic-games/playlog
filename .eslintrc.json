@@ -4,5 +4,14 @@
     "parserOptions": {
         "project": "tsconfig.json",
         "sourceType": "module"
+    },
+    "rules": {
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "variable",
+          "format": ["camelCase", "PascalCase"]
+        }
+      ]
     }
 }

@@ -48,6 +48,7 @@ const operationEvent: playlog.OperationEvent = [playlog.EventCode.Operation, 1, 
 // Event playerId = null
 const joinEventPlayerIdNull: playlog.Event = [playlog.EventCode.Join, 1, null];
 
+/* eslint-disable no-var */
 // Transient event (priority=2)
 const transientEvent: playlog.Event = [playlog.EventCode.Message, 2 | playlog.EventFlagsMask.Transient, "100", { transient: true }];
 var priority = playlog.EventFlagsMask.Priority & transientEvent[playlog.EventIndex.EventFlags];
@@ -59,6 +60,7 @@ const skippableEvent: playlog.Event = [playlog.EventCode.Message, 1 | playlog.Ev
 var priority = playlog.EventFlagsMask.Priority & skippableEvent[playlog.EventIndex.EventFlags];
 var transient = !!(playlog.EventFlagsMask.Transient & skippableEvent[playlog.EventIndex.EventFlags]);
 var ignorable = !!(playlog.EventFlagsMask.Ignorable & skippableEvent[playlog.EventIndex.EventFlags]);
+/* eslint-enable no-var */
 
 // Tick
 const tick: playlog.Tick = [100];
@@ -67,11 +69,11 @@ const tick: playlog.Tick = [100];
 const tickWithEvent: playlog.Tick = [100, [pointDownEvent]];
 
 // Tick with Storage
-var tickWithStorage: playlog.Tick = [100, null, [storageData]];
+let tickWithStorage: playlog.Tick = [100, null, [storageData]];
 tickWithStorage[playlog.TickIndex.Frame] = 101;
 
 // Tick with Event and Storage
-var tickWithStorage: playlog.Tick = [100, [pointDownEvent], [storageData]];
+tickWithStorage = [100, [pointDownEvent], [storageData]];
 
 // TickList
 const tickList: playlog.TickList = [0, 100, [tickWithStorage]];

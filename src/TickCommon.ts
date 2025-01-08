@@ -1,4 +1,5 @@
 import type * as storage from "./StorageData";
+import { Event } from "./EventCommon";
 
 /**
  * Tick

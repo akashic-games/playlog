@@ -51,15 +51,15 @@ const joinEventPlayerIdNull: playlog.Event = [playlog.EventCode.Join, 1, null];
 /* eslint-disable no-var */
 // Transient event (priority=2)
 const transientEvent: playlog.Event = [playlog.EventCode.Message, 2 | playlog.EventFlagsMask.Transient, "100", { transient: true }];
-var priority = playlog.EventFlagsMask.Priority & transientEvent[playlog.EventIndex.EventFlags];
-var transient = !!(playlog.EventFlagsMask.Transient & transientEvent[playlog.EventIndex.EventFlags]);
-var ignorable = !!(playlog.EventFlagsMask.Ignorable & transientEvent[playlog.EventIndex.EventFlags]);
+let priority = playlog.EventFlagsMask.Priority & transientEvent[playlog.EventIndex.EventFlags];
+let transient = !!(playlog.EventFlagsMask.Transient & transientEvent[playlog.EventIndex.EventFlags]);
+let ignorable = !!(playlog.EventFlagsMask.Ignorable & transientEvent[playlog.EventIndex.EventFlags]);
 
 // Ignorable event (priority=1)
 const skippableEvent: playlog.Event = [playlog.EventCode.Message, 1 | playlog.EventFlagsMask.Ignorable, "100", { ignorable: true }];
-var priority = playlog.EventFlagsMask.Priority & skippableEvent[playlog.EventIndex.EventFlags];
-var transient = !!(playlog.EventFlagsMask.Transient & skippableEvent[playlog.EventIndex.EventFlags]);
-var ignorable = !!(playlog.EventFlagsMask.Ignorable & skippableEvent[playlog.EventIndex.EventFlags]);
+priority = playlog.EventFlagsMask.Priority & skippableEvent[playlog.EventIndex.EventFlags];
+transient = !!(playlog.EventFlagsMask.Transient & skippableEvent[playlog.EventIndex.EventFlags]);
+ignorable = !!(playlog.EventFlagsMask.Ignorable & skippableEvent[playlog.EventIndex.EventFlags]);
 /* eslint-enable no-var */
 
 // Tick

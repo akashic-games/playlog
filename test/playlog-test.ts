@@ -48,7 +48,6 @@ const operationEvent: playlog.OperationEvent = [playlog.EventCode.Operation, 1, 
 // Event playerId = null
 const joinEventPlayerIdNull: playlog.Event = [playlog.EventCode.Join, 1, null];
 
-/* eslint-disable no-var */
 // Transient event (priority=2)
 const transientEvent: playlog.Event = [playlog.EventCode.Message, 2 | playlog.EventFlagsMask.Transient, "100", { transient: true }];
 let priority = playlog.EventFlagsMask.Priority & transientEvent[playlog.EventIndex.EventFlags];
@@ -60,7 +59,6 @@ const skippableEvent: playlog.Event = [playlog.EventCode.Message, 1 | playlog.Ev
 priority = playlog.EventFlagsMask.Priority & skippableEvent[playlog.EventIndex.EventFlags];
 transient = !!(playlog.EventFlagsMask.Transient & skippableEvent[playlog.EventIndex.EventFlags]);
 ignorable = !!(playlog.EventFlagsMask.Ignorable & skippableEvent[playlog.EventIndex.EventFlags]);
-/* eslint-enable no-var */
 
 // Tick
 const tick: playlog.Tick = [100];

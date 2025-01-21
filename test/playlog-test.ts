@@ -50,15 +50,15 @@ const joinEventPlayerIdNull: playlog.Event = [playlog.EventCode.Join, 1, null];
 
 // Transient event (priority=2)
 const transientEvent: playlog.Event = [playlog.EventCode.Message, 2 | playlog.EventFlagsMask.Transient, "100", { transient: true }];
-var priority = playlog.EventFlagsMask.Priority & transientEvent[playlog.EventIndex.EventFlags];
-var transient = !!(playlog.EventFlagsMask.Transient & transientEvent[playlog.EventIndex.EventFlags]);
-var ignorable = !!(playlog.EventFlagsMask.Ignorable & transientEvent[playlog.EventIndex.EventFlags]);
+let priority = playlog.EventFlagsMask.Priority & transientEvent[playlog.EventIndex.EventFlags];
+let transient = !!(playlog.EventFlagsMask.Transient & transientEvent[playlog.EventIndex.EventFlags]);
+let ignorable = !!(playlog.EventFlagsMask.Ignorable & transientEvent[playlog.EventIndex.EventFlags]);
 
 // Ignorable event (priority=1)
 const skippableEvent: playlog.Event = [playlog.EventCode.Message, 1 | playlog.EventFlagsMask.Ignorable, "100", { ignorable: true }];
-var priority = playlog.EventFlagsMask.Priority & skippableEvent[playlog.EventIndex.EventFlags];
-var transient = !!(playlog.EventFlagsMask.Transient & skippableEvent[playlog.EventIndex.EventFlags]);
-var ignorable = !!(playlog.EventFlagsMask.Ignorable & skippableEvent[playlog.EventIndex.EventFlags]);
+priority = playlog.EventFlagsMask.Priority & skippableEvent[playlog.EventIndex.EventFlags];
+transient = !!(playlog.EventFlagsMask.Transient & skippableEvent[playlog.EventIndex.EventFlags]);
+ignorable = !!(playlog.EventFlagsMask.Ignorable & skippableEvent[playlog.EventIndex.EventFlags]);
 
 // Tick
 const tick: playlog.Tick = [100];
@@ -67,11 +67,11 @@ const tick: playlog.Tick = [100];
 const tickWithEvent: playlog.Tick = [100, [pointDownEvent]];
 
 // Tick with Storage
-var tickWithStorage: playlog.Tick = [100, null, [storageData]];
+let tickWithStorage: playlog.Tick = [100, null, [storageData]];
 tickWithStorage[playlog.TickIndex.Frame] = 101;
 
 // Tick with Event and Storage
-var tickWithStorage: playlog.Tick = [100, [pointDownEvent], [storageData]];
+tickWithStorage = [100, [pointDownEvent], [storageData]];
 
 // TickList
 const tickList: playlog.TickList = [0, 100, [tickWithStorage]];

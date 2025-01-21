@@ -1,315 +1,114 @@
-import type * as storage from "./StorageData";
+export * from "./EventCommon";
+import * as event from "./constants/Event";
 
 /**
  * イベントコード
  */
 export const enum EventCode {
-	Join = 0x0,
-	Leave = 0x1,
-	Timestamp = 0x2,
-	PlayerInfo = 0x3,
-	Message= 0x20,
-	PointDown = 0x21,
-	PointMove = 0x22,
-	PointUp = 0x23,
-	Operation = 0x40
-}
-
-/**
- * イベント共通のインターフェース。
- */
-export interface Event extends Array<any> {
-	[index: number]: any;
-	/**
-	 * @param EventCode
-	 */
-	0: EventCode;
-	/**
-	 * @param イベントフラグ
-	 */
-	1: number;
-	/**
-	 * @param プレイヤーID
-	 */
-	2: string | null;
+	Join = event.EventCodeJoin,
+	Leave = event.EventCodeLeave,
+	Timestamp = event.EventCodeTimestamp,
+	PlayerInfo = event.EventCodePlayerInfo,
+	Message= event.EventCodeMessage,
+	PointDown = event.EventCodePointDown,
+	PointMove = event.EventCodePointMove,
+	PointUp = event.EventCodePointUp,
+	Operation = event.EventCodeOperation
 }
 
 export const enum EventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2
+	Code = event.EventIndexCode,
+	EventFlags = event.EventIndexEventFlags,
+	PlayerId = event.EventIndexPlayerId
 }
 
 export const enum EventFlagsMask {
-	Priority = 0b00011,
-	Transient = 0b01000,
-	Ignorable = 0b10000
-}
-
-/**
- * JoinEvent (0x0)
- * プレイヤーの参加イベント。
- */
-export interface JoinEvent extends Event {
-	/**
-	 * @param プレイヤー名
-	 */
-	3: string;
-	/*
-	 * @param ストレージデータ
-	 */
-	4?: storage.StorageData[];
+	Priority = event.EventFlagsMaskPriority,
+	Transient = event.EventFlagsMaskTransient,
+	Ignorable = event.EventFlagsMaskIgnorable
 }
 
 export const enum JoinEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PlayerName = 3,
-	StorageData = 4
-}
-
-/**
- * LeaveEvent (0x1)
- * プレイヤーの離脱イベント。
- */
-export interface LeaveEvent extends Event {
+	Code = event.JoinEventIndexCode,
+	EventFlags = event.JoinEventIndexEventFlags,
+	PlayerId = event.JoinEventIndexPlayerId,
+	PlayerName = event.PlayerInfoEventIndexPlayerName,
+	StorageData = event.JoinEventIndexStorageData
 }
 
 export const enum LeaveEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2
-}
-
-/**
- * TimestampEvent（0x2）
- * 時間の記録を表すイベント。
- */
-export interface TimestampEvent extends Event {
-	/**
-	 * @param 時間を表す値
-	 */
-	3: number;
+	Code = event.LeaveEventIndexCode,
+	EventFlags = event.LeaveEventIndexEventFlags,
+	PlayerId = event.LeaveEventIndexPlayerId
 }
 
 export const enum TimestampEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	Timestamp = 3
-}
-
-export interface PlayerInfoEvent extends Event {
-	/**
-	 * @param プレイヤー名
-	 */
-	3: string;
-	/**
-	 * @param ユーザ定義データ
-	 */
-	4?: any;
+	Code = event.TimestampEventIndexCode,
+	EventFlags = event.TimestampEventIndexEventFlags,
+	PlayerId = event.TimestampEventIndexPlayerId,
+	Timestamp = event.TimestampEventIndexTimeStamp
 }
 
 export const enum PlayerInfoEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PlayerName = 3,
-	UserData = 4
-}
-
-/**
- * MessageEvent (0x20)
- * 汎用的なデータを表すイベント。
- */
-export interface MessageEvent extends Event {
-	/**
-	 * @param データ
-	 */
-	3: any;
+	Code = event.PlayerInfoEventIndexCode,
+	EventFlags = event.PlayerInfoEventIndexEventFlags,
+	PlayerId = event.PlayerInfoEventIndexPlayerId,
+	PlayerName = event.PlayerInfoEventIndexPlayerName,
+	UserData = event.PlayerInfoEventIndexUserData
 }
 
 export const enum MessageEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	Data = 3
-}
-
-/**
- * PointDownEvent (0x21)
- * ポイントダウンイベント。
- */
-export interface PointDownEvent extends Event {
-	/**
-	 * @param ポインターID
-	 */
-	3: number;
-	/**
-	 * @param X座標
-	 */
-	4: number;
-	/**
-	 * @param Y座標
-	 */
-	5: number;
-	/**
-	 * @param エンティティID
-	 */
-	6?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	7?: number;
+	Code = event.MessageEventIndexCode,
+	EventFlags = event.MessageEventIndexEventFlags,
+	PlayerId = event.MessageEventIndexPlayerId,
+	Data = event.MessageEventIndexData
 }
 
 export const enum PointDownEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	EntityId = 6,
-	Button = 7
-}
-
-/**
- * PointMoveEvent (0x22)
- * ポイントムーブイベント。
- */
-export interface PointMoveEvent extends Event {
-	/**
-	 * @param ポインターID
-	 */
-	3: number;
-	/**
-	 * @param X座標
-	 */
-	4: number;
-	/**
-	 * @param Y座標
-	 */
-	5: number;
-	/**
-	 * @param ポイントダウンイベントからのX座標の差
-	 */
-	6: number;
-	/**
-	 * @param ポイントダウンイベントからのY座標の差
-	 */
-	7: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのX座標の差
-	 */
-	8: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのY座標の差
-	 */
-	9: number;
-	/**
-	 * @param エンティティID
-	 */
-	10?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	11?: number;
+	Code = event.PointDownEventIndexCode,
+	EventFlags = event.PointDownEventIndexEventFlags,
+	PlayerId = event.PointDownEventIndexPlayerId,
+	PointerId = event.PointDownEventIndexPointerId,
+	X = event.PointDownEventIndexX,
+	Y = event.PointDownEventIndexY,
+	EntityId = event.PointDownEventIndexEntityId,
+	Button = event.PointDownEventIndexButton
 }
 
 export const enum PointMoveEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	StartDeltaX = 6,
-	StartDeltaY = 7,
-	PrevDeltaX = 8,
-	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11,
-}
-
-/**
- * PointUpEvent (0x23)
- * ポイントアップイベント。
- */
-export interface PointUpEvent extends Event {
-	/**
-	 * @param ポインターID
-	 */
-	3: number;
-	/**
-	 * @param X座標
-	 */
-	4: number;
-	/**
-	 * @param Y座標
-	 */
-	5: number;
-	/**
-	 * @param ポイントダウンイベントからのX座標の差
-	 */
-	6: number;
-	/**
-	 * @param ポイントダウンイベントからのY座標の差
-	 */
-	7: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのX座標の差
-	 */
-	8: number;
-	/**
-	 * @param 直前のポイントムーブイベントからのY座標の差
-	 */
-	9: number;
-	/**
-	 * @param エンティティID
-	 */
-	10?: number;
-	/**
-	 * @param ボタンの種類
-	 */
-	11?: number;
+	Code = event.PointMoveEventIndexCode,
+	EventFlags = event.PointMoveEventIndexEventFlags,
+	PlayerId = event.PointMoveEventIndexPlayerId,
+	PointerId = event.PointMoveEventIndexPointerId,
+	X = event.PointMoveEventIndexX,
+	Y = event.PointMoveEventIndexY,
+	StartDeltaX = event.PointMoveEventIndexStartDeltaX,
+	StartDeltaY = event.PointMoveEventIndexStartDeltaY,
+	PrevDeltaX = event.PointMoveEventIndexPrevDeltaX,
+	PrevDeltaY = event.PointMoveEventIndexPrevDeltaY,
+	EntityId = event.PointMoveEventIndexEntityId,
+	Button = event.PointMoveEventIndexButton,
 }
 
 export const enum PointUpEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	PointerId = 3,
-	X = 4,
-	Y = 5,
-	StartDeltaX = 6,
-	StartDeltaY = 7,
-	PrevDeltaX = 8,
-	PrevDeltaY = 9,
-	EntityId = 10,
-	Button = 11
-}
-
-/**
- * OperationEvent (0x40)
- * 操作プラグインイベント。
- */
-export interface OperationEvent extends Event {
-	/**
-	 * @param 操作プラグインコード
-	 */
-	3: number;
-	/**
-	 * @param 操作プラグインデータ
-	 */
-	4: (number|string)[];
+	Code = event.PointUpEventIndexCode,
+	EventFlags = event.PointUpEventIndexEventFlags,
+	PlayerId = event.PointUpEventIndexPlayerId,
+	PointerId = event.PointUpEventIndexPointerId,
+	X = event.PointUpEventIndexX,
+	Y = event.PointUpEventIndexY,
+	StartDeltaX = event.PointUpEventIndexStartDeltaX,
+	StartDeltaY = event.PointUpEventIndexStartDeltaY,
+	PrevDeltaX = event.PointUpEventIndexPrevDeltaX,
+	PrevDeltaY = event.PointUpEventIndexPrevDeltaY,
+	EntityId = event.PointUpEventIndexEntityId,
+	Button = event.PointUpEventIndexButton
 }
 
 export const enum OperationEventIndex {
-	Code = 0,
-	EventFlags = 1,
-	PlayerId = 2,
-	OperationCode = 3,
-	Data = 4
+	Code = event.OperationEventIndexCode,
+	EventFlags = event.OperationEventIndexEventFlags,
+	PlayerId = event.OperationEventIndexPlayerId,
+	OperationCode = event.OperationEventIndexOperatonCode,
+	Data = event.OperationEventIndexData
 }

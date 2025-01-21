@@ -8,6 +8,10 @@
     "lib",
     "README.md"
   ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./constants": "./lib/constants/index.js"
+  },
   "scripts": {
     "prepare": "npm run clean && npm run build",
     "clean": "rimraf ./lib && rimraf ./test/build",

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.4.0
+* ./constants 以下に enum を利用しない型定義を追加
+
 ## 3.3.0
 * PointMoveEvent, PointUpEvent に button を追加
 

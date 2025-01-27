@@ -32,11 +32,7 @@
   "author": "DWANGO Co., Ltd.",
   "license": "MIT",
   "devDependencies": {
-    "@akashic/eslint-config": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "eslint": "^8.52.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jest": "^27.4.3",
+    "@akashic/eslint-config": "^3.0.0",
     "remark-cli": "^12.0.0",
     "remark-lint": "^9.1.2",
     "rimraf": "^5.0.5",

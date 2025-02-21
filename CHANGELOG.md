@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.4.1
+* 外部から package.json が参照できない問題を修正
+
 ## 3.4.0
 * ./constants 以下に enum を利用しない型定義を追加
 

@@ -1,6 +1,6 @@
 {
   "name": "@akashic/playlog",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "The interface definition of Playlog, the serialization format of Akashic game execution",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -10,7 +10,8 @@
   ],
   "exports": {
     ".": "./lib/index.js",
-    "./constants": "./lib/constants/index.js"
+    "./constants": "./lib/constants/index.js",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "prepare": "npm run clean && npm run build",

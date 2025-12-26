@@ -35,9 +35,9 @@
   "devDependencies": {
     "@akashic/eslint-config": "^3.0.0",
     "remark-cli": "^12.0.0",
-    "remark-lint": "^9.1.2",
-    "rimraf": "^5.0.5",
-    "textlint": "^14.0.0",
+    "remark-lint": "^10.0.0",
+    "rimraf": "^6.0.0",
+    "textlint": "^15.0.0",
     "textlint-rule-max-ten": "^5.0.0",
     "textlint-rule-no-mix-dearu-desumasu": "^6.0.0",
     "textlint-rule-prh": "^6.0.0",

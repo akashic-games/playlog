@@ -2,5 +2,9 @@
   "extends": [
     "github>akashic-games/renovate-config",
     "github>akashic-games/renovate-config:groupAll"
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "minimumReleaseAge": null
+  }
 }
